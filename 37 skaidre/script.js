@@ -11,9 +11,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if (isLiked === "true") {
             hearthNode.classList.add("liked");
             hearthNode.innerText = "❤️";
+            hearthNode.style.color = "red";
         } else {
             hearthNode.classList.add("not-liked");
             hearthNode.innerText = "💔";
+            hearthNode.style.color = "white";
         }
 
         hearthNode.addEventListener("click", () => {
@@ -23,9 +25,11 @@ document.addEventListener("DOMContentLoaded", () => {
             if (hearthNode.classList.contains("liked")) {
                 localStorage.setItem(likedKey, "true");
                 hearthNode.innerText = "❤️";
+                hearthNode.style.color = "red";
             } else {
                 localStorage.removeItem(likedKey);
                 hearthNode.innerText = "💔";
+                hearthNode.style.color = "white";
             }
         });
     });
